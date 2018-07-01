@@ -1,4 +1,3 @@
-// https://www.npmjs.com/package/vuetify
 import {Hero} from "./hero";
 import Vue from "vue";
 import HelloComponent from "./components/Hello.vue";
@@ -6,13 +5,10 @@ import TestComponent from './components/Test.vue';
 import * as $ from 'jquery'; 
 import {Options, Service} from "./Ajax";
 import {Todo} from "./components/todoComponent";
-//import Vuetify from 'vuetify'
-
-//Vue.use(Vuetify);
 
 $.ajaxSetup ({ // Disable caching of AJAX responses
-        cache: false
-    });
+  cache: false
+});
 
 let hero = new Hero('Krunal-1',0);
 console.log(hero.heroDetails());
@@ -40,7 +36,15 @@ let v = new Vue({
     }
 }); 
 
+let service = new Service();
+let request = {username: "igor", password:"igor1!"};
+let options = new Options("http://54.76.226.97:8888/ipa/apis/json/general/login","post",request);
+service.request(options, function (data:any) {
+    console.log(data);
+    app.setUserGroup( data.userGroupId, data.userId);
+});
 
+$('.hello-temp').css({"background-color":"#d2d484"}); 
 
 let app = new Vue({
   el: '#app0', 
@@ -81,15 +85,6 @@ let app = new Vue({
 });
 
 $('#app0').css({"background-color":"#d2d4d8"}); 
-$('.hello-temp').css({"background-color":"#d2d484"}); 
-
-let service = new Service();
-let request = {username: "igor", password:"igor1!"};
-let options = new Options("http://54.76.226.97:8888/ipa/apis/json/general/login","post",request);
-service.request(options, function (data:any) {
-    console.log(data);
-    app.setUserGroup( data.userGroupId, data.userId);
-});
 
 let app1 = new Vue({
   el: '#app1',
@@ -107,12 +102,12 @@ let app1 = new Vue({
     template:`
               <div>  
                   <test-component  :externalName="textValue1"/>      
-                  <button @click="changeName">Change Internal</button>           
+                  <button @click="changeInternal">Change Internal</button>           
               </div>  
              `,
     components: { TestComponent  },
     methods :{
-      changeName(){
+      changeInternal(){
         this.textValue1="Nataly";
       }
     }
