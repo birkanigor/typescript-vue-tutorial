@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TS-VUE-CLI</title>
+    <link href="./style/style.css" rel="stylesheet">     
+    <!--<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">   --> 
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <div id="app0">
+        <p v-if="buttonTextStatus != true">&nbsp</p>
+        <p v-if="buttonTextStatus">{{ message }}</p>
+        <p>{{ userInfo }}</p>
+        <ol>
+            <todo-item
+                v-for="item in todoList"
+                v-bind:todo="item"              
+                v-bind:key="item.id"      
+                v-bind:value="item.id">
+            </todo-item>
+            
+        </ol>            
+
+        <button v-on:click="reverseMessage">Reverse Message</button>
+        <button v-on:click="presentMessage">{{ buttonText }}</button>
+
+        <greeting></greeting>
+        <greeting></greeting>
+
+        <input type="text" ref="input"></input>
+        <button v-on:click="readRefs">Get Refs</button>
+        <div id="app1"></div>   
+        <button v-on:click="changeExternal">Change external</button>
+    </div>   
+
+</body>
+
+<script src="./dist/build.js"></script>
+
+</html>
