@@ -6,3 +6,9 @@ app1 : Test Component
 
 using ajax call to update values in the app vue by changeExternal function call
 using intrnal change by by changeInternal function call
+
+v2-0: 01/07/2018
+The example totaly changed .
+Hello & Test components removed 
+New components added : Header & Footer 
+The version presents a basics of Nesting Components Principle 
