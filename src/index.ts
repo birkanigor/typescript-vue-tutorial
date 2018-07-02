@@ -37,7 +37,7 @@ let v = new Vue({
 }); 
 
 let service = new Service();
-let request = {username: "igor", password:"igor1!"};
+let request = {username: "xxxxxxxx", password:"xxxxxxxx"};
 let options = new Options("http://54.76.226.97:8888/ipa/apis/json/general/login","post",request);
 service.request(options, function (data:any) {
     console.log(data);
