@@ -38,7 +38,7 @@ let v = new Vue({
 
 let service = new Service();
 let request = {username: "xxxxxxxx", password:"xxxxxxxx"};
-let options = new Options("http://54.76.226.97:8888/ipa/apis/json/general/login","post",request);
+let options = new Options("http://127.0.0.1:8888/ipa/apis/json/general/login","post",request);
 service.request(options, function (data:any) {
     console.log(data);
     app.setUserGroup( data.userGroupId, data.userId);
