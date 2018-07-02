@@ -25,7 +25,8 @@ export default {
     },
     methods:{
         increaseCounter:function(){
-            this.counter.count ++;
+            //this.counter.count ++;
+            this.$emit("increaseCounter",2);
         }
     }
 }

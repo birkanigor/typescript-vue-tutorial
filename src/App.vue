@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-header v-bind:title="title" v-bind:counter="counter"></app-header>
+    <app-header v-bind:title="title" v-bind:counter="counter" v-on:increaseCounter="increaseCounterGlobaly($event)"></app-header>
     <button v-on:click="counter.count++">Increase Externaly</button> 
     <hr>
     <app-technologies v-bind:technologies="technologies"></app-technologies>
@@ -34,6 +34,11 @@ export default {
             title : "Client Technologies",
             counter : { count : 10}
       }
+  },
+  methods:{
+    increaseCounterGlobaly:function(increaseAmount){
+      this.counter.count+=increaseAmount;
+    }
   }
 }
 </script>
