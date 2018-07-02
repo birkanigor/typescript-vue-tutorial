@@ -1,18 +1,33 @@
 <template>
   <header>
       <h1>
-          {{ title}}
-      </h1>
+          {{ title}} ( visitig counter : {{counter.count}} )
+      </h1>    
+      <button v-on:click="increaseCounter">Increase Internaly</button>  
   </header>
+  
 </template>
 
 <script>
 export default {
-  data(){
-      return{
-          title : "Client Technologies"
-      }
-  }
+    props: {
+        title : {
+            type : String
+        },
+        counter : {
+            type : Object
+        }
+    },
+    data(){
+        return{
+            
+        }
+    },
+    methods:{
+        increaseCounter:function(){
+            this.counter.count ++;
+        }
+    }
 }
 </script>
 

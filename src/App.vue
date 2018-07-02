@@ -1,8 +1,11 @@
 <template>
   <div>
-    <app-header></app-header>
-    <app-technologies></app-technologies>
-    <app-footer></app-footer>
+    <app-header v-bind:title="title" v-bind:counter="counter"></app-header>
+    <button v-on:click="counter.count++">Increase Externaly</button> 
+    <hr>
+    <app-technologies v-bind:technologies="technologies"></app-technologies>
+    <app-footer></app-footer>   
+    
   </div>
 </template>
 
@@ -19,8 +22,17 @@ export default {
     'app-technologies' : Technologies
   },
   data(){
-      return{
-          
+      return {
+          technologies: [
+                {name: 'VUE-JS', speciality: 'Vue Components', show: false},
+                {name: 'HTML5', speciality: 'HTML Wizardry', show: false},
+                {name: 'JavaScript', speciality: 'Click Events', show: false},
+                {name: 'JQuery', speciality: 'Conditionals', show: false},
+                {name: 'TypeScript', speciality: 'Webpack', show: false},
+                {name: 'Vuetify', speciality: 'Data Diggin', show: false}
+            ],
+            title : "Client Technologies",
+            counter : { count : 10}
       }
   }
 }

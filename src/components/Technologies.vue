@@ -15,18 +15,17 @@
 
 <script>
 export default {
-  data(){
-      return{
-            technologies: [
-                {name: 'VUE', speciality: 'Vue Components', show: false},
-                {name: 'HTML5', speciality: 'HTML Wizardry', show: false},
-                {name: 'JavaScript', speciality: 'Click Events', show: false},
-                {name: 'JQuery', speciality: 'Conditionals', show: false},
-                {name: 'TypeScript', speciality: 'Webpack', show: false},
-                {name: 'Vuetify', speciality: 'Data Diggin', show: false}
-            ]        
-      }
-  }
+    props:{
+        technologies:{
+            type: Array,
+            required : true
+        }
+    },
+    data(){
+        return{
+                    
+        }
+    }
 }
 </script>
 
@@ -51,5 +50,6 @@ li{
     padding: 30px;
     border: 1px solid #222;
     margin: 10px;
+    color: #1b0d87;
 }    
 </style>
