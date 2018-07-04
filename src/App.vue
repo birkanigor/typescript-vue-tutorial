@@ -36,8 +36,8 @@ export default {
       }
   },
   methods:{
-    increaseCounterGlobaly:function(increaseAmount){
-      this.counter.count+=increaseAmount;
+    increaseCounterGlobaly:function(newCounter){
+      this.counter.count =newCounter;
     }
   }
 }

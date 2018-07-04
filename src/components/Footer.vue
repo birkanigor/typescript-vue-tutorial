@@ -1,18 +1,28 @@
 <template>
     <footer>
         <p>
-            {{ copyright }}
+            {{ copyright }} - {{ counter }}
         </p>
     </footer>
 </template>
 
 <script>
+//importa 
+import {bus} from '../index';
+
+//exports
 export default {
   data(){
       return{
-        copyright : "Copyright 2018 (c)"
+        copyright : "Copyright 2018 (c)",
+        counter : 0
       }
-  }
+  },
+    created(){
+        bus.$on('counterIncrease', (data) => {
+            this.counter = data;
+        });
+    }
 }
 </script>
 

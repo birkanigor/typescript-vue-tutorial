@@ -1,10 +1,7 @@
 import Vue from "vue";
 import App from './App.vue'
 
-
-var store = {
-  counter : 0
-}
+export const bus = new Vue();
 
 new Vue({
   el: '#app',

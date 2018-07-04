@@ -9,6 +9,10 @@
 </template>
 
 <script>
+//imports
+import {bus} from '../index';
+
+//exports
 export default {
     props: {
         title : {
@@ -25,8 +29,9 @@ export default {
     },
     methods:{
         increaseCounter:function(){
-            //this.counter.count ++;
-            this.$emit("increaseCounter",2);
+            this.counter.count ++;
+            this.$emit("increaseCounter", this.counter.count);
+            bus.$emit('counterIncrease',  this.counter.count);
         }
     }
 }

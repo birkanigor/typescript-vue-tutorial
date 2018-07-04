@@ -17,3 +17,7 @@ The version presents a basics of Nesting Components Principle
 v3-0 : 02/07/2018
 
 The props sample added including internal and external change of Reference Prop
+
+v4-0 : 04/07/2018
+
+Event bus added
